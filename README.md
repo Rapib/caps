@@ -4,17 +4,6 @@
 
 This will be an event driven application that "distributes" the responsibility for logging to separate modules, using only events to trigger logging based on activity.
 
-## Before you begin
-
-Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-Create a UML diagram of the **CAPS** system on a whiteboard before you start.
-
-> Create a new repository for this project, called 'caps' and work in a branch called 'events'.
-
-## Business Requirements
-
-Refer to the [CAPS System Overview](../../apps-and-libraries/caps/README.md) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
 
 ## Phase 1 Requirements
 
@@ -35,29 +24,7 @@ And as developers, here are some of the development stories that are relevant to
 
 ## Technical Requirements / Notes
 
-### Proposed File Structure
 
-```text
-├── .github
-│   ├── workflows
-│   │   └── node.yml
-├── driver
-│   ├── handler.js
-│   ├── index.js
-│   └── driver-handler.test.js
-├── vendor
-│   ├── handler.js
-│   ├── index.js
-│   └── vendor-handler.test.js
-├── .eslintrc.json
-├── .gitignore
-├── eventPool.js.
-├── hub.js.
-├── package.json
-└── README.md
-```
-
-Create the CAPS system as follows:
 
 ### Global Event Pool (HUB)
 
@@ -151,8 +118,8 @@ EVENT { event: 'delivered',
 - Write unit tests for each event handler function (not event triggers themselves).
 - Use spies to help testing your logger methods (assert that console.log was called right).
 
-**Testing Note** - *The "event system" in Node.js has already been tested. What we want to test here is connectivity -- is your code responding to the right events?"
 
 ## Assignment Submission Instructions
 
-Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations.
+### lab11
+![lab11](lab11.jpg)
