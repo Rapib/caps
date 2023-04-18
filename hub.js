@@ -1,16 +1,7 @@
 'use strict';
 
 const  emitter = require('./eventPool');
-const {driverReadyToPickPkg} = require('./driver/handler');
-
-// Listens to ALL events in the Event Pool.
-// eventPool.forEach(event => {
-//   emitter.on(event, (payload) => {
-//     console.log('BRAIN IS GETTING AN UPDATE', event, payload);
-
-//     emitter.emit('UPDATE_STATE', payload);
-//   });
-// });
+const {driverReadyToPickPkg2} = require('./driver/handler');
 
 
 const eventPool = [
@@ -25,9 +16,9 @@ const eventPool = [
   // As a vendor, I want to be notified when my package has been delivered.
   '5vendorPkgDelivered',
 ];
+
 //EVENT Logger
-
-
+const date = new Date();
 eventPool.forEach(eventPool => {
   emitter.on(eventPool , (payload) => {
     let event = {};
@@ -38,25 +29,20 @@ eventPool.forEach(eventPool => {
   }
   );
 });
-const date = new Date();
+
 //1b ->  2a
-emitter.on('1vendorPkgToBePicked', driverReadyToPickPkg);
-
+emitter.on('1vendorPkgToBePicked', driverReadyToPickPkg2);
 //3b
-emitter.on('3driverAlertSysPkgPicked', (payload)=>{
+// emitter.on('3driverAlertSysPkgPicked', (payload)=>{
 
-});
+// });
 
 //4b -> 5a
-emitter.on('4driverAlertSysDelivered', (payload)=>{
+// emitter.on('4driverAlertSysDelivered', (payload)=>{
+//   emitter.emit('5vendorPkgDelivered', payload);
 
-  emitter.emit('5vendorPkgDelivered', payload);
-});
-// Implement a Module for a Global Event Pool.
-// Export a single EventEmitter from the Node JS module.
-// Should be imported by any module that needs to notify or be alerted by other modules of an event.
-// Implement a Module for Managing Global Package Events.
-// Logs a timestamp and the payload of every event.
+// });
+
 
 require('./driver/index');
 require('./vendor/index');

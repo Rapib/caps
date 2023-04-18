@@ -6,9 +6,9 @@ const emitter  = require('../eventPool');
 function orderFromVendor (storeName){
   let order =   {
     store: storeName,
-    orderId: "order-id",
-    customer: "customer-name",
-    address: "city-state"
+    orderId: "order2893247",
+    customer: "customer575",
+    address: "USA"
   };
   console.log('pkg ready');
   emitter.emit('1vendorPkgToBePicked', order);
@@ -19,7 +19,7 @@ function orderFromVendor (storeName){
 // sends a vendor order payload:
 // Listens for a delivered event and responds by logging a message to the console:
 //  Thank you, <customer-name></customer-name>
-let thankyouFromVendor = function(payload){
+function thankyouFromVendor (payload){
   console.log(`5b Thank you, ${payload.customer}`);
 };
 

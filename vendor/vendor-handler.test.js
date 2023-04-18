@@ -15,9 +15,9 @@ test('1 vendor Pkg ready To Be Picked up', async () => {
   orderFromVendor('aaa');
   let order =   {
     store: 'aaa',
-    orderId: "order-id",
-    customer: "customer-name",
-    address: "city-state"
+    orderId: "order2893247",
+    customer: "customer575",
+    address: "USA"
   };
   expect(console.log).toHaveBeenCalledWith('pkg ready');
   expect(emitter.emit).toHaveBeenCalledWith('1vendorPkgToBePicked', order);
