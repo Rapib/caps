@@ -1,9 +1,9 @@
 'use strict';
 // Your implementation should use a store name as a parameter.
-function orderFromVendor(storeName, socket) {
+function orderFromVendor(storeName, orderID, socket) {
   let order = {
     store: storeName,
-    orderId: "order2893247",
+    orderId: orderID,
     customer: "customer575",
     address: "USA"
   };
@@ -22,12 +22,14 @@ function thankyouFromVendor(payload) {
   console.log(`Thank you, ${payload.customer}`);
   // After the delivery event has been received, exit the application using process.exit().
   process.exit();
-};
+}
 
-
-
+function receiveMsg(socket){
+  return (payload)=> socket.emit('received', payload);
+}
 
 module.exports = {
   orderFromVendor,
-  thankyouFromVendor
+  thankyouFromVendor,
+  receiveMsg
 };
