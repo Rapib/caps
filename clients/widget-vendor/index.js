@@ -1,7 +1,7 @@
 'use strict';
 let socket = require('../socket');
 
-const { orderFromVendor, thankyouFromVendor, receiveMsg } = require('./widget-handler.test');
+const { orderFromVendor, thankyouFromVendor, receiveMsg } = require('./handler');
 // 2. Trigger the received event with the correct payload to the server.
 socket.on('getAll', receiveMsg(socket));
 socket.on('DeliverPkgToVendor', thankyouFromVendor);
