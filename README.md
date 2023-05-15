@@ -1,15 +1,10 @@
-# LAB: Event Driven Applications
+# Event Driven Applications
 
-**CAPS Phase 1:** Begin the build of an application for a product called **CAPS** - The Code Academy Parcel Service. In this sprint, we'll build out a system that emulates a real world supply chain. **CAPS** will simulate a delivery service where vendors (such a flower shops) will ship products using our delivery service and when our drivers deliver them, each vendor will be notified that their customers received what they purchased.
+Begin the build of an application for a product called **CAPS** - The Code Academy Parcel Service. In this sprint, we'll build out a system that emulates a real world supply chain. **CAPS** will simulate a delivery service where vendors (such a flower shops) will ship products using our delivery service and when our drivers deliver them, each vendor will be notified that their customers received what they purchased.
 
 This will be an event driven application that "distributes" the responsibility for logging to separate modules, using only events to trigger logging based on activity.
 
-
-## Phase 1 Requirements
-
-Today, we begin the first of a 4-Phase build of the CAPS system, written in Node.js. In this first phase, our goal is to setup a pool of events and handler functions, with the intent being to refactor parts of the system throughout the week, but keep the handlers themselves largely the same. The task of "delivering a package" doesn't change (the handler), even if the mechanism for triggering that task (the event) does.
-
-The following user/developer stories detail the major functionality for this phase of the project.
+## User stories
 
 - As a vendor, I want to alert the system when I have a package to be picked up.
 - As a driver, I want to be notified when there is a package to be delivered.
@@ -23,8 +18,6 @@ And as developers, here are some of the development stories that are relevant to
 - As a developer, I want to create an event driven system so that I can write code that happens in response to events, in real time.
 
 ## Technical Requirements / Notes
-
-
 
 ### Global Event Pool (HUB)
 
@@ -113,19 +106,3 @@ EVENT { event: 'delivered',
 ...
 ```
 
-### Testing
-
-- Write unit tests for each event handler function (not event triggers themselves).
-- Use spies to help testing your logger methods (assert that console.log was called right).
-
-
-## Assignment Submission Instructions
-
-### lab13
-
-![lab13](lab13.jpg)
-
-### lab12
-![lab12](lab12.jpg)
-### lab11
-![lab11](lab11.jpg)
